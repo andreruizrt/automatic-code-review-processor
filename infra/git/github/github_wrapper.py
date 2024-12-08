@@ -1,3 +1,5 @@
+import github
+
 from infra.git.git_wrapper import GitWrapper
 
 
@@ -5,7 +7,9 @@ from infra.git.git_wrapper import GitWrapper
 class GitHubWrapper(GitWrapper):
 
     def __init__(self, git_url, git_token):
-        pass
+        self.git_url = git_url
+        self.git_token = git_token
+        self.github_api = github.Github(git_token)
 
     def get_http_url_by_project_id(self, id_project):
         pass
