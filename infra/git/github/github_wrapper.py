@@ -21,7 +21,7 @@ class GitHubWrapper(GitWrapper):
         pass
 
     def get_merge_request(self, id_merge_request, id_project):
-        pass
+        return self.github_api.get_repo(id_project_target).get_pull(id_merge_request)
 
     def clone_repo(self, url, branch, path):
         pass
