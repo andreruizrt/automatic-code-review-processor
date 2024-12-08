@@ -15,7 +15,7 @@ class GitHubWrapper(GitWrapper):
         return self.github_api.get_repo(id_project).html_url
 
     def get_id_project_source_by_id_project_target(self, id_project_target, id_merge_request):
-        pass
+        return self.get_merge_request(id_merge_request, id_project_target).head.repo.id
 
     def get_changes_by_merge(self, id_merge_request, id_project):
         pass
