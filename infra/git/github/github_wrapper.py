@@ -12,7 +12,7 @@ class GitHubWrapper(GitWrapper):
         self.github_api = github.Github(git_token)
 
     def get_http_url_by_project_id(self, id_project):
-        pass
+        return self.github_api.get_repo(id_project).html_url
 
     def get_id_project_source_by_id_project_target(self, id_project_target, id_merge_request):
         pass
